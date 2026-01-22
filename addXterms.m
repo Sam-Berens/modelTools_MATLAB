@@ -24,10 +24,11 @@ function [X] = addXterms(X,xTermStruct)
 % USAGE EXAMPLE:
 %   X = addXterms(X, xTermStruct);
 % 
+j = size(X,2);
 k = numel(xTermStruct);
-nCols2Add = k - size(X,2);
+nCols2Add = k - j;
 X = [X,nan(size(X,1),nCols2Add)];
-for iK = 1:k
+for iK = (j+1):k
     sX = X(:,xTermStruct{iK});
     X(:,iK) = prod(sX,2);
 end
