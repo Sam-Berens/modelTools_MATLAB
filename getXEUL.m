@@ -51,7 +51,7 @@ end
 
 %% Start filling up X
 n = max(cellfun(@(v)numel(v),varargin));
-X = zeros(n,d);
+X = zeros(n,dIn);
 for ii = 1:dIn
     if numel(varargin{ii}) == 1
         X(:,ii) = varargin{ii};
